@@ -13,7 +13,7 @@ export enum LoadingMoreStatus{
 @Component
 export default struct LoadingMoreView {
   @Link visible : boolean
-  @Prop status: LoadingMoreStatus = LoadingMoreStatus.prepare;
+  @Prop @Require status: LoadingMoreStatus;
 
 
   build() {

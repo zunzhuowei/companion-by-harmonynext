@@ -121,7 +121,7 @@ export default struct OrderList {
           },(item: return_order_type, index: number) => index.toString())
 
           //加载更多
-          LoadingMoreView({ visible: this.loadingMoveVisible, status: this.reachStatus})
+          LoadingMoreView({ visible: $loadingMoveVisible,status: this.reachStatus})
           // ListItem() {
           //   Row() {
           //     Text('没有更多了').width('100%').textAlign(TextAlign.Center)
