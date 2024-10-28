@@ -76,7 +76,8 @@ struct Index {
       abilityName: 'OrdersAbility',
       parameters: {
         // 自定义信息
-        info: '来自EntryAbility Page_UIAbilityComponentsInteractive页面'
+        info: '来自EntryAbility Page_UIAbilityComponentsInteractive页面',
+        router: 'pages/TestPage'
       },
     };
 
@@ -103,6 +104,21 @@ struct Index {
       hilog.info(DOMAIN_NUMBER, TAG, JSON.stringify(data.resultCode) ?? '');
     }).catch((err: BusinessError) => {
       hilog.error(DOMAIN_NUMBER, TAG, `Failed to start ability for result. Code is ${err.code}, message is ${err.message}`);
+    });
+  }
+
+  // 隐式调用
+  toOrderAbility2(){
+    let wantInfo: Want = {
+      action: 'ohos.want.action.home',
+      entities: ['entity.system.home'],
+      uri: 'https://www.baidu.com',
+    };
+
+    this.context.startAbility(wantInfo).then(() => {
+      hilog.info(DOMAIN_NUMBER, TAG, 'startAbility success.');
+    }).catch((error: BusinessError) => {
+      hilog.error(DOMAIN_NUMBER, TAG, 'startAbility failed.');
     });
   }
 

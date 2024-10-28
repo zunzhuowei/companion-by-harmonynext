@@ -9,92 +9,6 @@ const TAG: string = '[Page_UIAbilityComponentsInteractive]';
 struct Index {
   build() {
     RelativeContainer() {
-      Image($r('app.media.startIcon')).width(80).height(80)
-        .alignRules({
-          top: { anchor: '__container__', align: VerticalAlign.Top },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center },
-        })
-        .id('image')
-      Text('admin').fontSize(30)
-        .alignRules({
-          top: { anchor: 'image', align: VerticalAlign.Bottom },
-          middle: { anchor: 'image', align: HorizontalAlign.Center },
-        })
-        .id('name')
-
-      Text('我的订单').fontSize(30)
-        .alignRules({
-          top: { anchor: 'name', align: VerticalAlign.Bottom },
-          left: { anchor: '__container__', align: HorizontalAlign.Start },
-        })
-        .margin({left: 20,top: 20})
-        .id('myOrder')
-      Text('全部').fontSize(30)
-        .alignRules({
-          top: { anchor: 'name', align: VerticalAlign.Bottom },
-          right: { anchor: '__container__', align: HorizontalAlign.End },
-        })
-        .margin({ right: 20,top:20})
-        .id('all')
-
-      Column(){
-        Image($r('app.media.startIcon')).width(20).height(20)
-        Text('待支付')
-      }
-      .alignRules({
-        top: { anchor: 'myOrder', align: VerticalAlign.Bottom },
-        left: { anchor: '__container__', align: HorizontalAlign.Start },
-      })
-      .margin({left: 20,top: 20})
-      .id('waitPay')
-
-      Column(){
-        Image($r('app.media.startIcon')).width(20).height(20)
-        Text('待服务')
-      }
-      .alignRules({
-        top: { anchor: 'myOrder', align: VerticalAlign.Bottom },
-        left: { anchor: 'waitPay', align: HorizontalAlign.End },
-      })
-      .margin({left: 20,top: 20})
-      .id('waitService')
-
-      Column(){
-        Image($r('app.media.startIcon')).width(20).height(20)
-        Text('已完成')
-      }
-      .alignRules({
-        top: { anchor: 'myOrder', align: VerticalAlign.Bottom },
-        left: { anchor: 'waitService', align: HorizontalAlign.End },
-      })
-      .margin({left: 20,top: 20})
-      .id('completePay')
-
-      Column(){
-        Image($r('app.media.startIcon')).width(20).height(20)
-        Text('已取消')
-      }
-      .alignRules({
-        top: { anchor: 'myOrder', align: VerticalAlign.Bottom },
-        left: { anchor: 'completePay', align: HorizontalAlign.End },
-      })
-      .margin({left: 20,top: 20})
-      .id('cancelPay')
-
-      Text('服务对象管理').fontSize(30)
-        .alignRules({
-          top: { anchor: 'cancelPay', align: VerticalAlign.Bottom },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center },
-        })
-        .margin({top: 20})
-
-      Text('分享分发').fontSize(30)
-        .alignRules({
-          top: { anchor: 'cancelPay', align: VerticalAlign.Bottom },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center },
-        })
-        .margin({top: 60})
-
       Button('FuncAbilityB')
         .onClick(() => {
           let context: common.UIAbilityContext = getContext(this) as common.UIAbilityContext; // UIAbilityContext
@@ -126,10 +40,9 @@ struct Index {
           });
         })
         .alignRules({
-          top: { anchor: 'cancelPay', align: VerticalAlign.Bottom },
+          center: { anchor: '__container__', align: VerticalAlign.Center },
           middle: { anchor: '__container__', align: HorizontalAlign.Center },
         })
-        .margin({top: 120})
 
     }
     .height('100%')

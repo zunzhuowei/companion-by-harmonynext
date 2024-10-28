@@ -3,11 +3,15 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 
 export default class OrdersAbility extends UIAbility {
+  funcAbilityWant: Want | undefined = undefined;
+
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     // 接收调用方UIAbility传过来的参数
     let funcAbilityWant = want;
     let info = funcAbilityWant?.parameters?.info;
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    // 接收调用方UIAbility传过来的参数
+    this.funcAbilityWant = want;
   }
 
   onDestroy(): void {
@@ -18,7 +22,13 @@ export default class OrdersAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Index', (err) => {
+    // Main window is created, set main page for this ability
+    let url = 'pages/Index';
+    if (this.funcAbilityWant?.parameters?.router && this.funcAbilityWant.parameters.router === 'pages/TestPage') {
+      url = 'pages/TestPage';
+    }
+
+    windowStage.loadContent(url, (err) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -40,5 +50,9 @@ export default class OrdersAbility extends UIAbility {
   onBackground(): void {
     // Ability has back to background
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
+  }
+
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+
   }
 }

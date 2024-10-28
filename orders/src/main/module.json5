@@ -23,8 +23,23 @@
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
+
+
         "launchType": "singleton",
-        "removeMissionAfterTerminate": true
+        "removeMissionAfterTerminate": true,
+        // 配置隐式want启动UIAbility组件
+        "skills": [
+          {
+            // 设置UIAbility支持的操作，如：查看数据
+            "entities": [
+              "entity.system.home"
+            ],
+            //设置UIAbility支持的能力类型，如浏览器类型
+            "actions": [
+                "ohos.want.action.home"
+            ]
+          }
+        ]
       }
     ]
   }
