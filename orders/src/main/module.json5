@@ -1,0 +1,31 @@
+{
+  "module": {
+    "name": "orders",
+    "type": "feature",
+    "srcEntry": "./ets/myabilitystage/OrderAbilityStage.ets",
+    "description": "$string:module_desc",
+    "mainElement": "OrdersAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "OrdersAbility",
+        "srcEntry": "./ets/ordersability/OrdersAbility.ets",
+        "description": "$string:OrdersAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:OrdersAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "launchType": "singleton",
+        "removeMissionAfterTerminate": true
+      }
+    ]
+  }
+}

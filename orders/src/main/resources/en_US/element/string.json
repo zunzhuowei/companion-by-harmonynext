@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "OrdersAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "OrdersAbility_label",
+      "value": "label"
+    }
+  ]
+}
