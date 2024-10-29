@@ -48,6 +48,30 @@
           ]
         }
       ]
+    },
+    {
+      "name": "login",
+      "srcPath": "./login",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "commons",
+      "srcPath": "./commons",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
     }
   ]
 }

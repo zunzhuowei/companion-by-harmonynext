@@ -3,6 +3,10 @@
     {
       "name": "app_name",
       "value": "myHostApp"
+    },
+    {
+      "name": "permission_internet",
+      "value": "use for request internet"
     }
   ]
 }

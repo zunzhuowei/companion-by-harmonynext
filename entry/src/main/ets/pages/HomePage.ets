@@ -10,13 +10,11 @@ struct HomePage {
   @State isLoading: boolean = true;
 
   aboutToAppear(): void {
-    getHomeData().then((value: return_home_type) => {
-      this.homeData = value;
-    })
-  }
-
-  onPageShow(): void {
-
+    setTimeout(() => {
+      getHomeData().then((value: return_home_type) => {
+        this.homeData = value;
+      })
+    },1000)
   }
 
   onDidBuild(): void {

@@ -44,7 +44,11 @@ struct Index {
     Column() {
       Tabs({ barPosition: BarPosition.End, controller: this.tabController, index: this.currentTabIndex }) {
         TabContent() {
-          HomePage()
+          if(this.changeFlag){
+            HomePage()
+          } else {
+            Text('loading ...')
+          }
         }
         .tabBar('首页')
 
