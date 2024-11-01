@@ -115,3 +115,11 @@ export struct ListItemComponent {
   }
 }
 ```
+3. 读取rawfile里的配置
+> this.context .resourceManager .getRawFileContent(this.songList[this.selectIndex].lyric)
+4. 获取 Promise 模式下指定资源路径对应的原始文件资源描述符。
+> let rawfileFd = await this.context.resourceManager.getRawFd(songItem.src)
+> this.context.resourceManager.closeRawFd(this.songItem.src);
+5. 在 Promise 模式下，获取指定资源对象对应的媒体文件内容。
+>  this.context.resourceManager.getMediaContent(this.songList[this.selectIndex].label)
+> 
