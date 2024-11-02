@@ -122,4 +122,12 @@ export struct ListItemComponent {
 > this.context.resourceManager.closeRawFd(this.songItem.src);
 5. 在 Promise 模式下，获取指定资源对象对应的媒体文件内容。
 >  this.context.resourceManager.getMediaContent(this.songList[this.selectIndex].label)
-> 
+6. 性能优化工具
+ ![images](docs/屏幕截图 2024-11-02 105234.png)
+7. 组件异步加载特性
+```javascript
+// syncLoad设置false，或缺省设置，都是异步加载图片
+Image('https://example.com/icon.png')
+  .syncLoad(false)
+```
+8. 多线程并发方案(TaskPool和Worker)
